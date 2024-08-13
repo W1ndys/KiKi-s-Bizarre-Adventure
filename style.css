@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#canvas1 {
+    border: 5px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    font-family: 'Creepster', cursive;
+    background: url('src/img/09/firstbackground.png') no-repeat center center;
+    background-size: cover;
+}
+
+#player, #layer1, #layer2, #layer3, #layer4, #layer5, #enemy_fly, #enemy_plant, #enemy_spider_big, #fire, #collisionAnimation, #lives {
+    display: none;
+}
+
+/* 新添加的界面样式 */
+#startScreen, #characterSelect, #levelSelect, #storyPage, #levelDescriptionPage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#startScreen h1, #characterSelect h1, #levelSelect h1, #storyPage h1, #levelDescriptionPage h1 {
+    color: white;
+    font-family: 'Creepster', sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#startButton, .character, .levelButton, .continueButton {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 2em;
+    cursor: pointer;
+    font-family: 'Creepster', sans-serif;
+}
+
+.character {
+    display: inline-block;
+}
+
+.character img {
+    width: 150px;
+    height: auto;
+}
+
+/* 关卡选择界面的样式 */
+#levelSelect {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 将“继续”按钮定位在右下角 */
+.continueButton {
+    position: absolute;
+    bottom: -120px;
+    right: -200px;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* 剧情页面样式 */
+#storyPage {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 关卡说明页面样式 */
+#levelDescriptionPage {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#levelDescriptionPage p {
+    font-size: 1.5em;
+    color: white;
+}
