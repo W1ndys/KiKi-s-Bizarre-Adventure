@@ -1,68 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
-    <link href="https://fonts.font.im/css?family=Creepster" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link href="https://fonts.font.im/css?family=Creepster" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <canvas id="canvas1"></canvas>
 
     <!-- 新添加的界面 -->
     <div id="startScreen">
-        <h1>Ki Ki's Bizarre Adventure</h1>
-        <div id="startButton">游戏开始</div>
+      <h1>Ki Ki's Bizarre Adventure</h1>
+      <div id="startButton">游戏开始</div>
     </div>
 
     <div id="characterSelect">
-        <h1>选择角色</h1>
-        <div class="character-container">
-            <div data-character="kiki" class="character">
-                <img src="../src/img/09/kiki.png" alt="kiki">
-                <div>kiki</div>
-            </div>
+      <h1>选择角色</h1>
+      <div class="character-container">
+        <div data-character="kiki" class="character">
+          <img src="../src/img/09/kiki.png" alt="kiki" />
+          <div>kiki</div>
         </div>
+      </div>
     </div>
 
     <div id="levelSelect">
-        <h1>选择关卡</h1>
-        <div data-level="1" class="levelButton">关卡 1</div>
-        <div data-level="2" class="levelButton">关卡 2</div>
-        <div data-level="3" class="levelButton">关卡 3</div>
-        <div data-level="4" class="levelButton">关卡 4</div>
-        <div data-level="5" class="levelButton">关卡 5</div>
+      <h1>选择关卡</h1>
+      <div data-level="1" class="levelButton">关卡 1</div>
+      <div data-level="2" class="levelButton">关卡 2</div>
+      <div data-level="3" class="levelButton">关卡 3</div>
+      <div data-level="4" class="levelButton">关卡 4</div>
+      <div data-level="5" class="levelButton">关卡 5</div>
     </div>
-
+   
     <!-- 新添加的剧情页面 -->
-    <div id="storyPage">
-        <h1>test</h1>
-        <div id="continueStory" class="continueButton">继续</div>
-    </div>
+     <div id="story">
+      <div id="storyPage1">
+        <h1>剧情1</h1>
+      </div>
+      <div id="storyPage2">
+        <h1>剧情2</h1>
+      </div>
+      <div id="storyPage3">
+        <h1>剧情3</h1>
+      </div>
+      <div id="storyPage4">
+        <h1>剧情4</h1>
+      </div>
+      <div id="storyPage5">
+        <h1>剧情5</h1>
+      </div>
+      <div id="continuestory" class="continueButton">继续</div>
+     </div>
+    
 
     <!-- 新添加的关卡说明页面 -->
-    <div id="levelDescriptionPage">
-        <h1>关卡说明</h1>
+     <div id="levelDescriptionPage">
+      <div id="level_1_DescriptionPage">
+        <h1>关卡说明1</h1>
         <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
-        <div id="continueLevelDescription" class="continueButton">继续</div>
-    </div>
+        <p>获得10分</p>
+      </div>
+      <div id="level_2_DescriptionPage">
+        <h1>关卡说明2</h1>
+        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+        <p>获得11分</p>
+      </div>
+      <div id="level_3_DescriptionPage">
+        <h1>关卡说明3</h1>
+        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+        <p>获得11分</p>
+      </div>
+      <div id="level_4_DescriptionPage">
+        <h1>关卡说明4</h1>
+        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+        <p>获得11分</p>
+      </div>
+      <div id="level_5_DescriptionPage">
+        <h1>关卡说明5</h1>
+        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+        <p>获得11分</p>
+      </div>
+      <div id="continuelevelDescriptionPage" class="continueButton">继续</div>
+     </div>
+    
 
     <!-- 游戏图像资源 -->
-    <img src="../src/img/09/项目9.png" alt="" id="player">
-    <img src="../src/img/09/layer-1.png" alt="" id="layer1">
-    <img src="../src/img/09/layer-2.png" alt="" id="layer2">
-    <img src="../src/img/09/layer-3.png" alt="" id="layer3">
-    <img src="../src/img/09/layer-4.png" alt="" id="layer4">
-    <img src="../src/img/09/layer-5.png" alt="" id="layer5">
-    <img src="../src/img/09/enemy_fly.png" alt="" id="enemy_fly">
-    <img src="../src/img/09/enemy_plant.png" alt="" id="enemy_plant">
-    <img src="../src/img/09/enemy_spider_big.png" alt="" id="enemy_spider_big">
-    <img src="../src/img/09/火纹.png" alt="" id="fire">
-    <img src="../src/img/09/碰撞动画.png" alt="" id="collisionAnimation">
-    <img src="../src/img/09/heart.png" alt="" id="lives">
+    <img src="../src/img/09/项目9.png" alt="" id="player" />
+    <img src="../src/img/09/layer-1.png" alt="" id="layer1" />
+    <img src="../src/img/09/layer-2.png" alt="" id="layer2" />
+    <img src="../src/img/09/layer-3.png" alt="" id="layer3" />
+    <img src="../src/img/09/layer-4.png" alt="" id="layer4" />
+    <img src="../src/img/09/layer-5.png" alt="" id="layer5" />
+    <img src="../src/img/09/enemy_fly.png" alt="" id="enemy_fly" />
+    <img src="../src/img/09/enemy_plant.png" alt="" id="enemy_plant" />
+    <img
+      src="../src/img/09/enemy_spider_big.png"
+      alt=""
+      id="enemy_spider_big"
+    />
+    <img src="../src/img/09/火纹.png" alt="" id="fire" />
+    <img src="../src/img/09/碰撞动画.png" alt="" id="collisionAnimation" />
+    <img src="../src/img/09/heart.png" alt="" id="lives" />
 
     <script type="module" src="main.js"></script>
-</body>
+  </body>
 </html>
