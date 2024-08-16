@@ -20,7 +20,7 @@ export class UI{
         context.drawImage(this.liveImage,25*i+20,95,25,25)
        }
         // 游戏结束看板
-        /*if(this.game.gameOver){
+        if(this.game.gameOver){
             context.textAlign='center'
             context.font=this.fontSize*2+'px '+this.fontFamily
             if(this.game.score>this.game.winningScore){
@@ -30,7 +30,7 @@ export class UI{
                 context.fillText('not bad,your score is :'+this.game.score,this.game.width*0.5,this.game.height*0.5)
             }
             
-        }*/
+        }
         context.restore()
     }
 }
