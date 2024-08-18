@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
 
     let currentScreen = "startScreen";
     let selectedCharacter = "kiki";
-    let unlockedLevels = [1];
+    let unlockedLevels = [1,4];
     //let gameInProgress = false;
     let target = 10;
 
