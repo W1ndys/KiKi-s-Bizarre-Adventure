@@ -18,15 +18,16 @@ class Layer{
     }
 }
 export class BackGround{
-    constructor(game){
+    constructor(game,level){
         this.game=game
         this.width=1667
         this.height=500
-        this.layerImage1=document.getElementById('layer1')
-        this.layerImage2=document.getElementById('layer2')
-        this.layerImage3=document.getElementById('layer3')
-        this.layerImage4=document.getElementById('layer4')
-        this.layerImage5=document.getElementById('layer5')
+        this.layerImage1=document.getElementById('level_'+level+'_layer1')
+        this.layerImage2=document.getElementById('level_'+level+'_layer2')
+        this.layerImage3=document.getElementById('level_'+level+'_layer3')
+        this.layerImage4=document.getElementById('level_'+level+'_layer4')
+        this.layerImage5=document.getElementById('level_'+level+'_layer5')
+        console.log(this.layerImage1,this.layerImage2,this.layerImage3,this.layerImage4,this.layerImage5)
         this.layer1=new Layer(this.game,this.width,this.height,0,this.layerImage1)
         this.layer2=new Layer(this.game,this.width,this.height,0.2,this.layerImage2)
         this.layer3=new Layer(this.game,this.width,this.height,0.4,this.layerImage3)
