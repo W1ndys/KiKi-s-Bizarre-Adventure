@@ -188,7 +188,7 @@ window.addEventListener("load", function () {
             this.groundMargin = 80;
             this.speed = 0;
             this.maxSpeed = 3;
-            this.background = new BackGround(this);
+            this.background = new BackGround(this,level);
             this.player = new Player(this, selectedCharacter);
             this.input = new InputHandler(this);
             this.ui = new UI(this);
