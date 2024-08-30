@@ -75,19 +75,14 @@ window.addEventListener("load", function () {
                 hideAllScreens();
                 switch (level) {
                     case 1:
-                        showStoryPage(level);
-                        break;
                     case 2:
-                        showStoryPage(level);
-                        break;
                     case 3:
-                        showStoryPage(level);
-                        break;
                     case 4:
                         showStoryPage(level);
                         break;
                     case 5:
-                        showStoryPage(level);
+                        // 跳转到 index2.html
+                        window.location.href = "index2.html";
                         break;
                 }
             }
@@ -258,3 +253,4 @@ window.addEventListener("load", function () {
         }
     }
 });
+
