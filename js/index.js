@@ -293,7 +293,7 @@
                                 e.data.level++;
                                 c.update(e.data);
                                 // 跳转到 index1.html
-                                window.location.href = "index1.html"
+                                window.location.href = "index.html"
                             }
                             if (!E) {
                                 if ((n || r) && (m.z -= p.z * d * w), (o || s) && (m.x -= p.x * d * w));
