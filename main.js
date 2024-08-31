@@ -86,7 +86,8 @@ window.addEventListener("load", function () {
                         showStoryPage(level);
                         break;
                     case 5:
-                        showStoryPage(level);
+                        // 跳转到 index2.html
+                        window.location.href = "index2.html";
                         break;
                 }
             }
@@ -256,3 +257,4 @@ window.addEventListener("load", function () {
         }
     }
 });
+
