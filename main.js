@@ -13,7 +13,9 @@ window.addEventListener("load", function () {
 
     let currentScreen = "startScreen";
     let selectedCharacter = "kiki";
+ 
     let unlockedLevels = [1, 2, 3, 4, 5];
+ 
     let target = 10;
 
     const screens = [
@@ -186,7 +188,9 @@ window.addEventListener("load", function () {
             this.groundMargin = 80;
             this.speed = 0;
             this.maxSpeed = 3;
+
             this.background = new BackGround(this, level);
+
             this.player = new Player(this, selectedCharacter);
             this.input = new InputHandler(this);
             this.ui = new UI(this);

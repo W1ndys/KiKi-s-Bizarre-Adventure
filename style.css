@@ -20,6 +20,8 @@
 }
 
 
+
+#player,#background, #layer1, #layer2, #layer3, #layer4, #layer5, #enemy_fly, #enemy_plant, #enemy_spider_big, #fire, #collisionAnimation, #lives {
 #player,
 #layer1,
 #layer2,
@@ -33,6 +35,7 @@
 #collisionAnimation,
 #lives,
 #background {
+
     display: none;
 }
 
