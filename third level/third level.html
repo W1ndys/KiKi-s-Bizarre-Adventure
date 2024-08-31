@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>KiKi's Bizarre Adventure</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    canvas {
+      border: 1px solid #000;
+    }
+
+    #fpsControl {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .gua-controls {
+      margin-top: 20px;
+    }
+
+    .gua-auto-silder {
+      width: 200px;
+    }
+
+    .gua-label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <canvas id="id-canvas" width="1200" height="800"></canvas>
+</div>
+<div>
+  <input id="fpsControl" type="range" value="1" />
+</div>
+<div class="gua-controls">
+  <!-- Control elements will be inserted here -->
+</div>
+
+<script src="image.js"></script>
+<script src="util.js"></script>
+<script src="game.js"></script>
+<script src="scene.js"></script>
+<script src="label.js"></script>
+<script src="animation.js"></script>
+<script src="level.js"></script>
+<script src="scene/scene_title.js"></script>
+<script src="scene/ground.js"></script>
+<script src="scene/bird.js"></script>
+<script src="scene/pipes.js"></script>
+<script src="scene/score.js"></script>
+<script src="config.js"></script>
+<script src="main.js"></script>
+
+<script>
+  let e = sel => document.querySelector(sel);
+  let es = sel => document.querySelectorAll(sel);
+
+  let bindAll = function(sel, eventName, callback) {
+    let l = es(sel);
+
+    for (var i = 0; i < l.length; i++) {
+      var input = l[i];
+      input.addEventListener(eventName, function(event) {
+        callback(event);
+      });
+    }
+  };
+
+  let templateControl = function(key, item) {
+    let t = `<div class="gua-controls">
+          <label>
+            <input class="gua-auto-silder" type="range"
+              min="${item.min}"
+              max="${item.max}"
+              value="${item.value}"
+              data-value="config.${key}" />
+              ${item._comment} <span class="gua-label"></span>
+          </label>
+        </div>`;
+
+    return t;
+  };
+
+  let insertControls = function() {
+    let div = e('.gua-controls');
+    let keys = Object.keys(config);
+    for (let k of keys) {
+      let item = config[k];
+      let html = templateControl(k, item);
+      div.insertAdjacentHTML('beforeend', html);
+    }
+  };
+
+  let bindEvents = function() {
+    bindAll('.gua-auto-silder', 'input', function(event) {
+      let target = event.target;
+      let bindVar = target.dataset.value;
+      let v = target.value;
+      eval(bindVar + ".value=" + v);
+      var label = target.closest('label').querySelector('.gua-label');
+      label.innerText = v;
+    });
+  };
+
+  let _main = function() {
+    insertControls();
+    bindEvents();
+  };
+
+  _main();
+</script>
+</body>
+</html>

@@ -13,8 +13,7 @@ window.addEventListener("load", function () {
 
     let currentScreen = "startScreen";
     let selectedCharacter = "kiki";
-    let unlockedLevels = [1,2,3,4,5];
-    //let gameInProgress = false;
+    let unlockedLevels = [1];
     let target = 10;
 
     const screens = [
@@ -131,7 +130,6 @@ window.addEventListener("load", function () {
     function startGame(level) {
         const game = new Game(canvas.width, canvas.height, level);
         let lastTime = 0;
-        //gameInProgress = true;
 
         function animate(timeStamp) {
             const deltaTime = timeStamp - lastTime;
@@ -148,9 +146,7 @@ window.addEventListener("load", function () {
                     requestAnimationFrame(animate);
                 } else {
                     handleGameOver(false);
-                    // gameInProgress = false;
                 }
-
             }
         }
         animate(0);
@@ -158,14 +154,18 @@ window.addEventListener("load", function () {
 
     // 处理游戏结束函数
     function handleGameOver(passed) {
-        //if (gameInProgress) {
         if (passed) {
             if (!unlockedLevels.includes(level + 1)) {
                 unlockedLevels.push(level + 1);
             }
-            hideAllScreens();
-            document.getElementById("levelSelect").style.display = "block";
-            currentScreen = "levelSelect";
+            if (level === 2) {
+                // 第二关结束后自动重定向到另一个游戏页面
+                window.location.href = "file:///C:/Users/qingzao/Desktop/%EF%BC%88%E4%B8%90%EF%BC%89KiKi's%20Bizarre%20Adventure/third%20level.html";  // 重定向的目标游戏页面URL
+            } else {
+                hideAllScreens();
+                document.getElementById("levelSelect").style.display = "block";
+                currentScreen = "levelSelect";
+            }
         } else {
             const retry = confirm("未达到过关条件，是否重新开始？");
             if (retry) {
@@ -176,8 +176,6 @@ window.addEventListener("load", function () {
                 document.getElementById("levelSelect").style.display = "block";
                 currentScreen = "levelSelect";
             }
-            //}
-            //gameInProgress = false;
         }
     }
 
@@ -188,7 +186,7 @@ window.addEventListener("load", function () {
             this.groundMargin = 80;
             this.speed = 0;
             this.maxSpeed = 3;
-            this.background = new BackGround(this,level);
+            this.background = new BackGround(this);
             this.player = new Player(this, selectedCharacter);
             this.input = new InputHandler(this);
             this.ui = new UI(this);
