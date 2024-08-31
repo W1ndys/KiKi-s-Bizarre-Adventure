@@ -171,3 +171,7 @@
     cursor: pointer;
 
 }
+
+#background img {
+    display: block;
+}
