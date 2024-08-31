@@ -88,7 +88,7 @@ class TitleScene extends GuaScene {
       alert("恭喜，你赢了！游戏结束！");
       // 重定向到指定页面
       setTimeout(() => {
-        window.location.href = "file:///C:/Users/qingzao/Desktop/KiKi-s-Bizarre-Adventure-main/index.html"; // 替换为你想重定向到的 URL
+        window.location.href = "/index.html"; // 替换为你想重定向到的 URL
       }, 1000); // 延迟1秒以确保提示框可以看到
     }
   }
