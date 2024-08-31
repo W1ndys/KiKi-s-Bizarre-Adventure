@@ -207,7 +207,7 @@ window.addEventListener("load", function () {
             this.time = 0;
             this.maxTime = maxTime; // 使用传递的maxTime
             this.gameOver = false;
-            this.lives = 1;
+            this.lives = 5;
             this.winningScore = 40;
             this.player.currentState = this.player.states[0];
             this.player.currentState.enter();
