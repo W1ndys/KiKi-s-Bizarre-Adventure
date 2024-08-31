@@ -13,7 +13,9 @@ window.addEventListener("load", function () {
 
     let currentScreen = "startScreen";
     let selectedCharacter = "kiki";
-    let unlockedLevels = [1,2,3,4,5];
+ 
+    let unlockedLevels = [1, 2, 3, 4, 5];
+ 
     let target = 10;
 
     const screens = [
@@ -86,7 +88,8 @@ window.addEventListener("load", function () {
                         showStoryPage(level);
                         break;
                     case 5:
-                        showStoryPage(level);
+                        // 跳转到 index2.html
+                        window.location.href = "index2.html";
                         break;
                 }
             }
@@ -128,7 +131,7 @@ window.addEventListener("load", function () {
 
     // 启动游戏函数
     function startGame(level) {
-        const game = new Game(canvas.width, canvas.height, level);
+        const game = new Game(canvas.width, canvas.height, level, 60000); // 每关60秒
         let lastTime = 0;
 
         function animate(timeStamp) {
@@ -140,8 +143,7 @@ window.addEventListener("load", function () {
             if (game.score >= target) {
                 handleGameOver(true);
                 target = target + 5;
-            }
-            else {
+            } else {
                 if (!game.gameOver) {
                     requestAnimationFrame(animate);
                 } else {
@@ -160,7 +162,7 @@ window.addEventListener("load", function () {
             }
             if (level === 2) {
                 // 第二关结束后自动重定向到另一个游戏页面
-                window.location.href = "file:///C:/Users/qingzao/Desktop/%EF%BC%88%E4%B8%90%EF%BC%89KiKi's%20Bizarre%20Adventure/third%20level.html";  // 重定向的目标游戏页面URL
+                window.location.href = "/third-level/third-level.html";  // 重定向的目标游戏页面URL
             } else {
                 hideAllScreens();
                 document.getElementById("levelSelect").style.display = "block";
@@ -180,13 +182,15 @@ window.addEventListener("load", function () {
     }
 
     class Game {
-        constructor(width, height, level) {
+        constructor(width, height, level, maxTime) {
             this.width = width;
             this.height = height;
             this.groundMargin = 80;
             this.speed = 0;
             this.maxSpeed = 3;
-            this.background = new BackGround(this,level);
+
+            this.background = new BackGround(this, level);
+
             this.player = new Player(this, selectedCharacter);
             this.input = new InputHandler(this);
             this.ui = new UI(this);
@@ -201,7 +205,7 @@ window.addEventListener("load", function () {
             this.score = 0;
             this.fontColor = "black";
             this.time = 0;
-            this.maxTime = 60000;
+            this.maxTime = maxTime; // 使用传递的maxTime
             this.gameOver = false;
             this.lives = 1;
             this.winningScore = 40;
@@ -256,3 +260,4 @@ window.addEventListener("load", function () {
         }
     }
 });
+
