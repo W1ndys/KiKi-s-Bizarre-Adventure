@@ -30,10 +30,10 @@ export class BackGround{
         console.log(this.layerImage1,this.layerImage2,this.layerImage3,this.layerImage4,this.layerImage5)
         this.layer1=new Layer(this.game,this.width,this.height,0,this.layerImage1)
         this.layer2=new Layer(this.game,this.width,this.height,0.2,this.layerImage2)
-        this.layer3=new Layer(this.game,this.width,this.height,0.4,this.layerImage3)
+        // this.layer3=new Layer(this.game,this.width,this.height,0.4,this.layerImage3)
         this.layer4=new Layer(this.game,this.width,this.height,0.6,this.layerImage4)
-        this.layer5=new Layer(this.game,this.width,this.height,0.8,this.layerImage5)
-        this.BackGroundLayers=[this.layer1,this.layer2,this.layer3,this.layer4,this.layer5]
+        // this.layer5=new Layer(this.game,this.width,this.height,0.8,this.layerImage5)
+        this.BackGroundLayers=[this.layer1,this.layer2,this.layer4]
     }
     update(){
         this.BackGroundLayers.forEach(layer=>{

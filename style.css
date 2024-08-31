@@ -20,12 +20,28 @@
 }
 
 
-#player, #layer1, #layer2, #layer3, #layer4, #layer5, #enemy_fly, #enemy_plant, #enemy_spider_big, #fire, #collisionAnimation, #lives {
+#player,
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#layer5,
+#enemy_fly,
+#enemy_plant,
+#enemy_spider_big,
+#fire,
+#collisionAnimation,
+#lives,
+#background {
     display: none;
 }
 
 /* 新添加的界面样式 */
-#startScreen, #characterSelect, #levelSelect,#story,#levelDescriptionPage  {
+#startScreen,
+#characterSelect,
+#levelSelect,
+#story,
+#levelDescriptionPage {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -39,7 +55,11 @@
 
 
 /*剧情*/
-#storyPage1,#storyPage2,#storyPage3,#storyPage4,#storyPage5{
+#storyPage1,
+#storyPage2,
+#storyPage3,
+#storyPage4,
+#storyPage5 {
     top: 50%;
     left: 50%;
     text-align: center;
@@ -48,15 +68,24 @@
     border-radius: 10px;
     display: none;
 }
-#storyPage1 h1, #storyPage2 h1,#storyPage3 h1,#storyPage4 h1,#storyPage5 h1 {
+
+#storyPage1 h1,
+#storyPage2 h1,
+#storyPage3 h1,
+#storyPage4 h1,
+#storyPage5 h1 {
     color: white;
     font-family: 'Creepster', sans-serif;
     font-size: 3em;
     margin-bottom: 20px;
 }
+
 /*关卡说明*/
-#level_1_DescriptionPage,#level_2_DescriptionPage,#level_3_DescriptionPage,#level_4_DescriptionPage,#level_5_DescriptionPage
-{
+#level_1_DescriptionPage,
+#level_2_DescriptionPage,
+#level_3_DescriptionPage,
+#level_4_DescriptionPage,
+#level_5_DescriptionPage {
 
     top: 50%;
     left: 50%;
@@ -67,26 +96,41 @@
     display: none;
     padding: 20px;
 }
-#level_1_DescriptionPage p, #level_2_DescriptionPage p, #level_3_DescriptionPage p, #level_4_DescriptionPage p, #level_5_DescriptionPage p {
+
+#level_1_DescriptionPage p,
+#level_2_DescriptionPage p,
+#level_3_DescriptionPage p,
+#level_4_DescriptionPage p,
+#level_5_DescriptionPage p {
     font-size: 1.5em;
     color: white;
 }
-#level_1_DescriptionPage h1,#level_2_DescriptionPage h1,#level_3_DescriptionPage h1,#level_4_DescriptionPage h1,#level_5_DescriptionPage h1 {
+
+#level_1_DescriptionPage h1,
+#level_2_DescriptionPage h1,
+#level_3_DescriptionPage h1,
+#level_4_DescriptionPage h1,
+#level_5_DescriptionPage h1 {
     color: white;
     font-family: 'Creepster', sans-serif;
     font-size: 3em;
     margin-bottom: 20px;
-    
+
 }
 
-#startScreen h1, #characterSelect h1, #levelSelect h1{
+#startScreen h1,
+#characterSelect h1,
+#levelSelect h1 {
     color: white;
     font-family: 'Creepster', sans-serif;
     font-size: 3em;
     margin-bottom: 20px;
 }
 
-#startButton, .character, .levelButton, .continueButton {
+#startButton,
+.character,
+.levelButton,
+.continueButton {
     background-color: white;
     color: black;
     padding: 10px 20px;
@@ -125,8 +169,5 @@
     border-radius: 5px;
     font-size: 2em;
     cursor: pointer;
-    
+
 }
-
-
-

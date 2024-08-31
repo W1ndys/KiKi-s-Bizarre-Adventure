@@ -339,9 +339,9 @@
                 key: "launchFullScreen",
                 value: function (e) {
                     e.requestFullscreen ? e.requestFullscreen() :
-                    e.mozRequestFullScreen ? e.mozRequestFullScreen() :
-                    e.webkitRequestFullscreen ? e.webkitRequestFullscreen() :
-                    e.msRequestFullscreen && e.msRequestFullscreen();
+                        e.mozRequestFullScreen ? e.mozRequestFullScreen() :
+                            e.webkitRequestFullscreen ? e.webkitRequestFullscreen() :
+                                e.msRequestFullscreen && e.msRequestFullscreen();
                 }
             }, {
                 key: "updateModule",
@@ -435,7 +435,7 @@
                     this.mesh.name = "wallpaper";
                     n.add(this.mesh);
                     i.getDelta();
-                    document.getElementById("text").innerText = "第 " + e.level + " 关";
+                    document.getElementById("text").innerText = "第 5 关";
                 }
             }, {
                 key: "_createMonster",

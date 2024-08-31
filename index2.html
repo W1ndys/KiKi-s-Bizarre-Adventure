@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             height: 100%;
         }
@@ -17,7 +19,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         #instructions {
@@ -62,7 +64,8 @@
             padding: 20px;
             text-align: center;
             border-radius: 10px;
-            z-index: 1000; /* 确保提示框在其他内容之上 */
+            z-index: 1000;
+            /* 确保提示框在其他内容之上 */
         }
 
         #nextLevelPrompt button {
@@ -73,49 +76,51 @@
         }
     </style>
 </head>
+
 <body>
-<div id="blocker">
-    <div id="instructions">
-        <span style="font-size:40px">点击屏幕开始</span>
-        <br />
-        <br />
-        (W, A, S, D = 移动, SPACE = 跳跃, MOUSE = 移动视角)
+    <div id="blocker">
+        <div id="instructions">
+            <span style="font-size:40px">点击屏幕开始</span>
+            <br />
+            <br />
+            (W, A, S, D = 移动, MOUSE = 移动视角)
+        </div>
     </div>
-</div>
-<div id="text">第1关</div>
+    <div id="text">第 5 关</div>
 
-<!-- 添加过关提示框 -->
-<div id="nextLevelPrompt">
-    <p>恭喜通关！是否前往下一关？</p>
-    <button id="yesButton">是</button>
-    <button id="noButton">否</button>
-</div>
+    <!-- 添加过关提示框 -->
+    <div id="nextLevelPrompt">
+        <p>恭喜通关！是否前往下一关？</p>
+        <button id="yesButton">是</button>
+        <button id="noButton">否</button>
+    </div>
 
-<script src="js/dop.min.js"></script>
-<script src="js/three.js"></script>
-<script src="js/threebsp.js"></script>
-<script src="js/PointerLockControls.js"></script>
-<script src="js/stats.min.js"></script>
-<script src="js/Detector.js"></script>
-<script src="js/index.js"></script>
+    <script src="js/dop.min.js"></script>
+    <script src="js/three.js"></script>
+    <script src="js/threebsp.js"></script>
+    <script src="js/PointerLockControls.js"></script>
+    <script src="js/stats.min.js"></script>
+    <script src="js/Detector.js"></script>
+    <script src="js/index.js"></script>
 
-<script>
-    // 通过外部js控制过关提示框
-    function showNextLevelPrompt() {
-        document.getElementById('nextLevelPrompt').style.display = 'block';
-    }
+    <script>
+        // 通过外部js控制过关提示框
+        function showNextLevelPrompt() {
+            document.getElementById('nextLevelPrompt').style.display = 'block';
+        }
 
-    document.getElementById('yesButton').addEventListener('click', function() {
-        // 跳转到下一关
-        window.location.href = 'nextLevel.html'; // 将 'nextLevel.html' 替换为下一关的文件路径
-    });
+        document.getElementById('yesButton').addEventListener('click', function () {
+            // 跳转到下一关
+            window.location.href = 'nextLevel.html'; // 将 'nextLevel.html' 替换为下一关的文件路径
+        });
 
-    document.getElementById('noButton').addEventListener('click', function() {
-        // 退出游戏
-        window.close(); // 关闭当前窗口
-    });
+        document.getElementById('noButton').addEventListener('click', function () {
+            // 退出游戏
+            window.close(); // 关闭当前窗口
+        });
 
-    // 这里调用 showNextLevelPrompt() 当玩家通过一关时
-</script>
+        // 这里调用 showNextLevelPrompt() 当玩家通过一关时
+    </script>
 </body>
+
 </html>
