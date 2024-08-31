@@ -13,9 +13,9 @@ window.addEventListener("load", function () {
 
     let currentScreen = "startScreen";
     let selectedCharacter = "kiki";
- 
+
     let unlockedLevels = [1, 2, 3, 4, 5];
- 
+
     let target = 10;
 
     const screens = [
@@ -205,7 +205,7 @@ window.addEventListener("load", function () {
             this.score = 0;
             this.fontColor = "black";
             this.time = 0;
-            this.maxTime = maxTime; // 使用传递的maxTime
+            this.maxTime = 3600000;
             this.gameOver = false;
             this.lives = 5;
             this.winningScore = 40;
