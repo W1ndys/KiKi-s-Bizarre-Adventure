@@ -1,6 +1,7 @@
 class TitleScene extends GuaScene {
-  constructor(game) {
+  constructor(game, onLevelComplete) {
     super(game);
+    this.onLevelComplete = onLevelComplete; // 添加回调函数
     this.setup();
     this.setInputs();
     this.debugModeEnabled = false;
@@ -45,15 +46,15 @@ class TitleScene extends GuaScene {
   setInputs() {
     let self = this;
 
-    this.game.registerAction('a', function(state) {
+    this.game.registerAction('a', function (state) {
       self.player.move(-2, state);
     });
 
-    this.game.registerAction('d', function(state) {
+    this.game.registerAction('d', function (state) {
       self.player.move(2, state);
     });
 
-    window.addEventListener('keydown', function(event) {
+    window.addEventListener('keydown', function (event) {
       if (event.code === 'Space') { // 空格键按下事件
         if (self.gameCurrentState === self.GameState.ready) {
           self.gameCurrentState = self.GameState.run;
@@ -82,10 +83,16 @@ class TitleScene extends GuaScene {
       }
     }
 
-    // 检查得分是否达到11
+    // 检查得分是否达到5
     if (this.score.getScore() >= 5) {
       this.changeGameState(this.GameState.over); // 改变游戏状态到 'over'
       alert("恭喜，你赢了！游戏结束！");
+
+      // 调用回调函数通知关卡完成
+      if (this.onLevelComplete) {
+        this.onLevelComplete(true);
+      }
+
       // 重定向到指定页面
       setTimeout(() => {
         window.location.href = "/index.html"; // 替换为你想重定向到的 URL

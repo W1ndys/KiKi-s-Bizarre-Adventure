@@ -14,7 +14,8 @@ window.addEventListener("load", function () {
     let currentScreen = "startScreen";
     let selectedCharacter = "kiki";
 
-    let unlockedLevels = [1, 2, 3, 4, 5];
+    // 从 localStorage 中读取解锁的关卡信息
+    let unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels')) || [1];
 
     let target = 10;
 
@@ -82,7 +83,7 @@ window.addEventListener("load", function () {
                         showStoryPage(level);
                         break;
                     case 3:
-                        showStoryPage(level);
+                        window.location.href = "third-level/third-level.html";
                         break;
                     case 4:
                         showStoryPage(level);
@@ -92,6 +93,8 @@ window.addEventListener("load", function () {
                         window.location.href = "index2.html";
                         break;
                 }
+            } else {
+                alert("该关卡尚未解锁！");
             }
         });
     });
@@ -160,14 +163,13 @@ window.addEventListener("load", function () {
             if (!unlockedLevels.includes(level + 1)) {
                 unlockedLevels.push(level + 1);
             }
-            if (level === 2) {
-                // 第二关结束后自动重定向到另一个游戏页面
-                window.location.href = "/third-level/third-level.html";  // 重定向的目标游戏页面URL
-            } else {
+            else {
                 hideAllScreens();
                 document.getElementById("levelSelect").style.display = "block";
                 currentScreen = "levelSelect";
             }
+            // 更新 localStorage
+            window.localStorage.setItem('unlockedLevels', JSON.stringify(unlockedLevels));
         } else {
             const retry = confirm("未达到过关条件，是否重新开始？");
             if (retry) {
