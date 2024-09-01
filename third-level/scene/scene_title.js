@@ -34,6 +34,8 @@ class TitleScene extends GuaScene {
       'run': self.rungame,
       'over': () => {
         self.player.update();
+        // 游戏失败时跳转到指定URL
+        window.location.href = '/index.html';  // 替换为目标URL
       },
       'win': () => {
         self.showWinScreen();

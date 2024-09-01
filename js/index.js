@@ -408,7 +408,7 @@
                     var t = this.main,
                         n = t.three.scene,
                         i = t.three.clock,
-                        r = e.level + 5,
+                        r = e.level + 4,
                         a = this.prim.generate(r, r, [1, 1], [2 * r - 1, 2 * r - 1]),
                         o = e.image.wallpaper,
                         s = void 0,
