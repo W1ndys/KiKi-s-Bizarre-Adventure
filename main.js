@@ -15,7 +15,11 @@ window.addEventListener("load", function () {
     let selectedCharacter = "kiki";
 
     // 从 localStorage 中读取解锁的关卡信息
-    let unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels')) || [1];
+    let unlockedLevels = [1];
+    if(window.localStorage.getItem('unlockedLevels')){
+        unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels') || []);
+    }
+    // let unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels')) || [1];
 
     let target = 10;
 
@@ -75,24 +79,7 @@ window.addEventListener("load", function () {
             level = parseInt(e.currentTarget.getAttribute("data-level"));
             if (unlockedLevels.includes(level)) {
                 hideAllScreens();
-                switch (level) {
-                    case 1:
-                        showStoryPage(level);
-                        break;
-                    case 2:
-                        showStoryPage(level);
-                        break;
-                    case 3:
-                        window.location.href = "third-level/third-level.html";
-                        break;
-                    case 4:
-                        showStoryPage(level);
-                        break;
-                    case 5:
-                        // 跳转到 index2.html
-                        window.location.href = "index2.html";
-                        break;
-                }
+                showStoryPage(level);
             } else {
                 alert("该关卡尚未解锁！");
             }
@@ -129,7 +116,13 @@ window.addEventListener("load", function () {
         .getElementById("continuelevelDescriptionPage")
         .addEventListener("click", () => {
             hideAllScreens();
-            startGame(level);
+            if (level == 3) {
+                window.location.href = "third-level/third-level.html";
+            } else if (level == 5) {
+                window.location.href = "index2.html";
+            } else {
+                startGame(level);
+            }
         });
 
     // 启动游戏函数
@@ -162,14 +155,15 @@ window.addEventListener("load", function () {
         if (passed) {
             if (!unlockedLevels.includes(level + 1)) {
                 unlockedLevels.push(level + 1);
-            }
-            else {
                 hideAllScreens();
                 document.getElementById("levelSelect").style.display = "block";
                 currentScreen = "levelSelect";
             }
             // 更新 localStorage
-            window.localStorage.setItem('unlockedLevels', JSON.stringify(unlockedLevels));
+            // window.localStorage.setItem('unlockedLevels', JSON.stringify(unlockedLevels));
+            // hideAllScreens();
+            // document.getElementById("levelSelect").style.display = "block";
+            // currentScreen = "levelSelect";
         } else {
             const retry = confirm("未达到过关条件，是否重新开始？");
             if (retry) {
