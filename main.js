@@ -75,8 +75,14 @@ window.addEventListener("load", function () {
                 hideAllScreens();
                 switch (level) {
                     case 1:
+                        showStoryPage(level);
+                        break;
                     case 2:
+                        showStoryPage(level);
+                        break;
                     case 3:
+                        showStoryPage(level);
+                        break;
                     case 4:
                         showStoryPage(level);
                         break;
