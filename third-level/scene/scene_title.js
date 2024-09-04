@@ -35,6 +35,7 @@ class TitleScene extends GuaScene {
       'over': () => {
         self.player.update();
         // 游戏失败时跳转到指定URL
+        window.localStorage.setItem('unlockedLevels1', JSON.stringify([1, 2, 3]));
         window.location.href = '/index.html';  // 替换为目标URL
       },
       'win': () => {
