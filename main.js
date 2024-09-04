@@ -16,16 +16,16 @@ window.addEventListener("load", function () {
 
     // 从 localStorage 中读取解锁的关卡信息
     let unlockedLevels = [1];
-    if(window.localStorage.getItem('unlockedLevels1')){
+    if (window.localStorage.getItem('unlockedLevels1')) {
         unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels1') || []);
     }
-    if(window.localStorage.getItem('unlockedLevels')){
+    if (window.localStorage.getItem('unlockedLevels')) {
         unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels') || []);
     }
 
     // let unlockedLevels = JSON.parse(window.localStorage.getItem('unlockedLevels')) || [1];
 
-    let target = 1;
+    let target = 10;
 
     const screens = [
         "startScreen",
@@ -142,7 +142,7 @@ window.addEventListener("load", function () {
             game.draw(ctx);
             if (game.score >= target) {
                 handleGameOver(true);
-                target = 1;
+                target = 10 + level * 2;
             } else {
                 if (!game.gameOver) {
                     requestAnimationFrame(animate);
