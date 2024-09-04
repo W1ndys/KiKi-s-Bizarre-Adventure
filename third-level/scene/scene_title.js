@@ -87,7 +87,7 @@ class TitleScene extends GuaScene {
     }
 
     // 检查得分是否达到5
-    if (this.score.getScore() >= 2) {
+    if (this.score.getScore() >= 5) {
       this.changeGameState(this.GameState.over); // 改变游戏状态到 'over'
       window.localStorage.setItem('unlockedLevels', JSON.stringify([1, 2, 3, 4]));
       alert("恭喜，你赢了！游戏结束！");
