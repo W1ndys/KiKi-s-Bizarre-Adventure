@@ -1,137 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game</title>
-    <link href="https://fonts.font.im/css?family=Creepster" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <canvas id="canvas1"></canvas>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game</title>
+  <link href="https://fonts.font.im/css?family=Creepster" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- 新添加的界面 -->
-    <div id="startScreen">
-      <h1>Ki Ki's Bizarre Adventure</h1>
-      <div id="startButton">游戏开始</div>
+<body>
+  <canvas id="canvas1"></canvas>
+
+  <!-- 新添加的界面 -->
+  <div id="startScreen">
+    <h1>Ki Ki's Bizarre Adventure</h1>
+    <div id="startButton">游戏开始</div>
+  </div>
+
+  <!-- 新添加的提醒 -->
+  <div id="incognitoReminder" style="color: red; text-align: center; margin-top: 20px;">
+    <p style="font-size: 50px;">请以无痕模式打开</p>
+  </div>
+
+  <div id="characterSelect">
+    <h1>选择角色</h1>
+    <div class="character-container">
+      <div data-character="kiki" class="character">
+        <img src="./src/img/09/kiki.png" alt="kiki" />
+        <div>kiki</div>
+      </div>
     </div>
+  </div>
 
-    <div id="characterSelect">
-      <h1>选择角色</h1>
-      <div class="character-container">
-        <div data-character="kiki" class="character">
-          <img src="./src/img/09/kiki.png" alt="kiki" />
-          <div>kiki</div>
-        </div>
-      </div>
+  <div id="levelSelect">
+    <h1>选择关卡</h1>
+    <div data-level="1" class="levelButton">关卡 1</div>
+    <div data-level="2" class="levelButton">关卡 2</div>
+    <div data-level="3" class="levelButton">关卡 3</div>
+    <div data-level="4" class="levelButton">关卡 4</div>
+    <div data-level="5" class="levelButton">关卡 5</div>
+  </div>
+
+  <!-- 新添加的剧情页面 -->
+  <div id="story" style="color: white;">
+
+    <div id="storyPage1">
+      <h1>剧情1</h1>
+      <p>太阳历1145年，神恩大陆陷入了一场前所未有的危机。邪恶的魔王"天妖"奥硕横空出世，他以强大的力量压制了维恩王国，肆意蹂躏生灵，犯下了无数罪行。百姓们在苦难中向神明祈祷，以求解脱。</p>
+      <p>就在绝望之际，伟大的创世猫神回应了人民的祷告。他降下了神圣的光芒，与"天妖"奥硕展开了惊天动地的大战。经过激烈的厮杀，创世猫神将魔王斩杀。但是，"天妖"奥硕并未就此死去。他化身为无数的魔物,企图重新崛起,再次统治神恩大陆。
+      </p>
+      <p>
+        创世猫神意识到必须有一位勇士前去阻止"天妖"奥硕的复生。于是他派遣了英雄KIKI前往执行这项艰巨的任务。KIKI在降世时,天空中飞舞着绚丽的霞光,空气中弥漫着神圣的香气。然而,在"天妖"奥硕残余力量的干扰下,KIKI被迫化生为一名骷髅兜帽人并失去了记忆，唯有杀死"天妖"奥硕和恢复原身的执念留存。
+      </p>
+      <p>
+        为了恢复原貌,阻止"天妖"奥硕的复生,英雄KIKI踏上了一段艰险的旅程。他一路杀破了魔王旗下的众多魔将,破解了"天妖"奥硕设下的重重魔柱大阵,最终进入到了魔王的宫殿。在那里,KIKI破解了宫殿的迷障，夺取到了"天妖"奥硕的魔力核心,恢复了原本的模样,并成功阻止了魔王的复生。
+      </p>
+      <p>自此,百姓们摆脱了长期的苦难,重拾了幸福安康的生活，神恩大陆重现往日的宁静与安详。</p>
     </div>
-
-    <div id="levelSelect">
-      <h1>选择关卡</h1>
-      <div data-level="1" class="levelButton">关卡 1</div>
-      <div data-level="2" class="levelButton">关卡 2</div>
-      <div data-level="3" class="levelButton">关卡 3</div>
-      <div data-level="4" class="levelButton">关卡 4</div>
-      <div data-level="5" class="levelButton">关卡 5</div>
+    <div id="storyPage2">
+      <h1>剧情2</h1>
+      <p>
+        跟寻创世猫神的指引，KIKI来到受诅的温莎镇。温莎镇被诅咒的南瓜灯笼照亮，空气中充满了腐败的气息。KIKI必须击败这些恶毒的生物，它们是"天妖"奥硕魔力的残余。在这里，KIKI觉悟了原身的力量，化作一团燎火燃尽一切魑魅魍魉。
+      </p>
     </div>
-
-    <!-- 新添加的剧情页面 -->
-    <div id="story">
-      <div id="storyPage1">
-        <h1>剧情1</h1>
-      </div>
-      <div id="storyPage2">
-        <h1>剧情2</h1>
-      </div>
-      <div id="storyPage3">
-        <h1>剧情3</h1>
-      </div>
-      <div id="storyPage4">
-        <h1>剧情4</h1>
-      </div>
-      <div id="storyPage5">
-        <h1>剧情5</h1>
-      </div>
-      <div id="continuestory" class="continueButton">继续</div>
+    <div id="storyPage3">
+      <h1>剧情3</h1>
+      <p>
+        在击破了温莎镇的诅咒之后，kiki来到西德尼大墓地，被"天妖"奥硕残念所唤醒的亡灵蜂拥而来。，它们以残忍的方式守护着墓地。KIKI必须在阴森的环境中穿行，找到通往下一个区域的道路。途中，KIKI得知了"天妖"奥硕复生计划的一部分，知晓了要想抵达魔宫，必须先破解魔王设下的魔柱大阵。
+      </p>
     </div>
-
-    <!-- 新添加的关卡说明页面 -->
-    <div id="levelDescriptionPage">
-      <div id="level_1_DescriptionPage">
-        <h1>关卡说明1</h1>
-        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
-        <p>获得10分</p>
-      </div>
-      <div id="level_2_DescriptionPage">
-        <h1>关卡说明2</h1>
-        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
-        <p>获得11分</p>
-      </div>
-      <div id="level_3_DescriptionPage">
-        <h1>关卡说明3</h1>
-        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
-        <p>获得11分</p>
-      </div>
-      <div id="level_4_DescriptionPage">
-        <h1>关卡说明4</h1>
-        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
-        <p>获得11分</p>
-      </div>
-      <div id="level_5_DescriptionPage">
-        <h1>关卡说明5</h1>
-        <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
-        <p>获得11分</p>
-      </div>
-      <div id="continuelevelDescriptionPage" class="continueButton">继续</div>
+    <div id="storyPage4">
+      <h1>剧情4</h1>
+      <p>
+        进入了森林深处，KIKI面临的是由"天妖"奥硕设下的魔柱大阵。这些魔柱是复生仪式的关键部分，这些魔柱坚不可摧，触之即死，路途愈发艰难，于是创世猫神赐予了KIKI踏风靴，让KIKI能凌空飞行，越过魔柱的阻碍。在这个过程中，KIKI逐渐明悟了自己的真身，坚定了继续前行的决心。
+      </p>
     </div>
-
-    <!-- 游戏图像资源 -->
-    <img src="./src/img/09/test.png" alt="" id="player" />
-    <!-- 关卡1背景层 -->
-    <div id="background">
-      <img src="./src/img/09/layer-1.png" alt="" id="level_1_layer1" />
-      <img src="./src/img/09/layer-2.png" alt="" id="level_1_layer2" />
-      <img src="./src/img/09/layer-3.png" alt="" id="level_1_layer3" />
-      <img src="./src/img/09/layer-4.png" alt="" id="level_1_layer4" />
-      <img src="./src/img/09/layer-5.png" alt="" id="level_1_layer5" />
-      <!-- 关卡2背景层 -->
-      <img src="./src/img/level_2_layers/1.png" alt="" id="level_2_layer1" />
-      <img src="./src/img/level_2_layers/2.png" alt="" id="level_2_layer2" />
-      <img src="./src/img/level_2_layers/3.png" alt="" id="level_2_layer3" />
-      <img src="./src/img/level_2_layers/4.png" alt="" id="level_2_layer4" />
-      <img src="./src/img/level_2_layers/5.png" alt="" id="level_2_layer5" />
-      <!-- 关卡3背景层 -->
-      <img src="./src/img/09/layer-1.png" alt="" id="level_3_layer1" />
-      <img src="./src/img/09/layer-2.png" alt="" id="level_3_layer2" />
-      <img src="./src/img/09/layer-3.png" alt="" id="level_3_layer3" />
-      <img src="./src/img/09/layer-4.png" alt="" id="level_3_layer4" />
-      <img src="./src/img/09/layer-5.png" alt="" id="level_3_layer5" />
-      <!-- 关卡4背景层 -->
-      <img src="./src/img/level_4_layers/1.png" alt="" id="level_4_layer1" />
-      <img src="./src/img/level_4_layers/2.png" alt="" id="level_4_layer2" />
-      <img src="./src/img/level_4_layers/3.png" alt="" id="level_4_layer3" />
-      <img src="./src/img/level_4_layers/4.png" alt="" id="level_4_layer4" />
-      <img src="./src/img/level_4_layers/6.png" alt="" id="level_4_layer5" />
-      <!-- 关卡5背景层 -->
-      <img src="./src/img/09/layer-1.png" alt="" id="level_5_layer1" />
-      <img src="./src/img/09/layer-2.png" alt="" id="level_5_layer2" />
-      <img src="./src/img/09/layer-3.png" alt="" id="level_5_layer3" />
-      <img src="./src/img/09/layer-4.png" alt="" id="level_5_layer4" />
-      <img src="./src/img/09/layer-5.png" alt="" id="level_5_layer5" />
+    <div id="storyPage5">
+      <h1>剧情5</h1>
+      <p>
+        穿过了森林后，KIKI来到了熔岩枯洞。这里是魔王的力量核心所在，炽热的熔岩不断侵袭着KIKI的身体，KIKI必须在恶劣的环境中生存，并对抗强大的魔物。KIKI在熔岩枯洞中找到了一块古老的符文石板，这块石板指引着他如何进入"天妖"奥硕的宫殿，并最终打破魔王赖以复生的魔力核心。
+      </p>
+      <p>
+        最终，KIKI进入了"天妖"奥硕的宫殿。宫殿角落暗藏杀机，迷障四散。重复的通路让KIKI逐渐迷失了方向，他逡巡在宫殿道路上，不知所往，所幸创世猫神事先在KIKI身上留下一点宿慧，成功唤醒了KIKI的意识，并找到了"天妖"奥硕的魔力核心，恢复了自己的原貌，阻止了魔王的复生，解救了神恩大陆。
+      </p>
     </div>
-    <img src="./src/img/09/enemy_fly.png" alt="" id="enemy_fly" />
-    <img src="./src/img/09/enemy_plant.png" alt="" id="enemy_plant" />
-    <img
-      src="./src/img/09/enemy_spider_big.png"
-      alt=""
-      id="enemy_spider_big"
-    />
-    <img src="./src/img/09/火纹.png" alt="" id="fire" />
-    <img src="./src/img/09/碰撞动画.png" alt="" id="collisionAnimation" />
-    <img src="./src/img/09/heart.png" alt="" id="lives" />
+    <div id="continuestory" class="continueButton">继续</div>
+  </div>
 
-    <script type="module" src="main.js"></script>
-  </body>
+  <!-- 新添加的关卡说明页面 -->
+  <div id="levelDescriptionPage">
+    <div id="level_1_DescriptionPage">
+      <h1>关卡说明1</h1>
+      <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+      <p>获得10分</p>
+    </div>
+    <div id="level_2_DescriptionPage">
+      <h1>关卡说明2</h1>
+      <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+      <p>获得11分</p>
+    </div>
+    <div id="level_3_DescriptionPage">
+      <h1>关卡说明3</h1>
+      <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+      <p>获得11分</p>
+    </div>
+    <div id="level_4_DescriptionPage">
+      <h1>关卡说明4</h1>
+      <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+      <p>获得11分</p>
+    </div>
+    <div id="level_5_DescriptionPage">
+      <h1>关卡说明5</h1>
+      <p>控制按钮为：箭头控制上、下、左、右，冲刺为回车键</p>
+      <p>获得11分</p>
+    </div>
+    <div id="continuelevelDescriptionPage" class="continueButton">继续</div>
+  </div>
+
+  <!-- 游戏图像资源 -->
+  <img src="./src/img/09/test.png" alt="" id="player" />
+  <!-- 关卡1背景层 -->
+  <div id="background">
+    <img src="./src/img/09/layer-1.png" alt="" id="level_1_layer1" />
+    <img src="./src/img/09/layer-2.png" alt="" id="level_1_layer2" />
+    <img src="./src/img/09/layer-3.png" alt="" id="level_1_layer3" />
+    <img src="./src/img/09/layer-4.png" alt="" id="level_1_layer4" />
+    <img src="./src/img/09/layer-5.png" alt="" id="level_1_layer5" />
+    <!-- 关卡2背景层 -->
+    <img src="./src/img/level_2_layers/1.png" alt="" id="level_2_layer1" />
+    <img src="./src/img/level_2_layers/2.png" alt="" id="level_2_layer2" />
+    <img src="./src/img/level_2_layers/3.png" alt="" id="level_2_layer3" />
+    <img src="./src/img/level_2_layers/4.png" alt="" id="level_2_layer4" />
+    <img src="./src/img/level_2_layers/5.png" alt="" id="level_2_layer5" />
+    <!-- 关卡3背景层 -->
+    <img src="./src/img/09/layer-1.png" alt="" id="level_3_layer1" />
+    <img src="./src/img/09/layer-2.png" alt="" id="level_3_layer2" />
+    <img src="./src/img/09/layer-3.png" alt="" id="level_3_layer3" />
+    <img src="./src/img/09/layer-4.png" alt="" id="level_3_layer4" />
+    <img src="./src/img/09/layer-5.png" alt="" id="level_3_layer5" />
+    <!-- 关卡4背景层 -->
+    <img src="./src/img/level_4_layers/1.png" alt="" id="level_4_layer1" />
+    <img src="./src/img/level_4_layers/2.png" alt="" id="level_4_layer2" />
+    <img src="./src/img/level_4_layers/3.png" alt="" id="level_4_layer3" />
+    <img src="./src/img/level_4_layers/4.png" alt="" id="level_4_layer4" />
+    <img src="./src/img/level_4_layers/6.png" alt="" id="level_4_layer5" />
+    <!-- 关卡5背景层 -->
+    <img src="./src/img/09/layer-1.png" alt="" id="level_5_layer1" />
+    <img src="./src/img/09/layer-2.png" alt="" id="level_5_layer2" />
+    <img src="./src/img/09/layer-3.png" alt="" id="level_5_layer3" />
+    <img src="./src/img/09/layer-4.png" alt="" id="level_5_layer4" />
+    <img src="./src/img/09/layer-5.png" alt="" id="level_5_layer5" />
+  </div>
+  <img src="./src/img/09/enemy_fly.png" alt="" id="enemy_fly" />
+  <img src="./src/img/09/enemy_plant.png" alt="" id="enemy_plant" />
+  <img src="./src/img/09/enemy_spider_big.png" alt="" id="enemy_spider_big" />
+  <img src="./src/img/09/火纹.png" alt="" id="fire" />
+  <img src="./src/img/09/碰撞动画.png" alt="" id="collisionAnimation" />
+  <img src="./src/img/09/heart.png" alt="" id="lives" />
+
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>
